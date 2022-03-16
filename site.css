@@ -18,7 +18,12 @@ h4 {
   padding: 10px;
 }
 
-/* quick link styles */
+/* list styles */
+li {
+  color: #4f3674;
+}
+
+/* quick-link styles */
 a {
   color: #4f3674;
   text-decoration: none;
