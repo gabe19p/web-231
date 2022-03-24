@@ -1,0 +1,95 @@
+<!-- 
+https://www.w3schools.com/jsref/jsref_tofixed.asp 
+https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../site.css" />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link rel="stylesheet" type="text/css" href="purselley-payroll.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+    />
+    <title>WEB 231 - Enterprise JavaScript I</title>
+  </head>
+  <body>
+    <main id="container">
+      <h1 id="payroll-header">Payroll System</h1>
+      <!-- Record 1 -->
+      <h3 id="txtRecordMadison">Employee record 1</h3>
+      <ul>
+        <li id="txtFirstNameMadison"></li>
+        <li id="txtLastNamePurselley"></li>
+        <li id="txtAddressMadison"></li>
+        <li id="txtHireDateMadison"></li>
+        <li id="txtPayRateMadison"></li>
+      </ul>
+      <!-- Record 2 -->
+      <h3 id="txtRecordZane">Employee record 2</h3>
+      <ul>
+        <li id="txtFirstNameZane"></li>
+        <li id="txtLastNameArambula"></li>
+        <li id="txtAddressZane"></li>
+        <li id="txtHireDateZane"></li>
+        <li id="txtPayRateZane"></li>
+      </ul>
+      <!-- Record 3 -->
+      <h3 id="txtRecordEricsen">Employee record 3</h3>
+      <ul>
+        <li id="txtFirstNameEricsen"></li>
+        <li id="txtLastNameGudjohnsen"></li>
+        <li id="txtAddressEricsen"></li>
+        <li id="txtHireDateEricsen"></li>
+        <li id="txtPayRateEricsen"></li>
+      </ul>
+
+      <script>
+        //   ul variable designation
+        let txtRecordMadison = document.getElementById("txtRecordMadison");
+        let txtRecordZane = document.getElementById("txtRecordZane");
+        let txtRecordEricsen = document.getElementById("txtRecordEricsen");
+
+        //  li variable designation (madison)
+        document.getElementById("txtFirstNameMadison").innerHTML = "Madison";
+        document.getElementById("txtLastNamePurselley").innerHTML = "Purselley";
+        document.getElementById("txtAddressMadison").innerHTML =
+          "Kadena AB, Japan";
+        document.getElementById("txtHireDateMadison").innerHTML = "01/18/2022";
+        //  pay rate adjustments
+        let payRateMadison = 15.578172;
+        let fixedRateMadison = payRateMadison.toFixed(1);
+        document.getElementById("txtPayRateMadison").innerHTML =
+          fixedRateMadison;
+
+        //  li variable designation (zane)
+        document.getElementById("txtFirstNameZane").innerHTML = "Zane";
+        document.getElementById("txtLastNameArambula").innerHTML = "Arambula";
+        document.getElementById("txtAddressZane").innerHTML = "Houston, TX";
+        document.getElementById("txtHireDateZane").innerHTML = "10/20/2018";
+        //  pay rate adjustment
+        let payRateZane = 20.278172;
+        let fixedRateZane = payRateZane.toFixed(1);
+        document.getElementById("txtPayRateZane").innerHTML = fixedRateZane;
+
+        //  li variable designation (ericsen)
+        document.getElementById("txtFirstNameEricsen").innerHTML = "Ericsen";
+        document.getElementById("txtLastNameGudjohnsen").innerHTML =
+          "Gudjohnsen";
+        document.getElementById("txtAddressEricsen").innerHTML = "McKinney, TX";
+        let txtHireDateEricsen = new Date();
+        // document.getElementById("txtHireDateEricsen").innerHTML = "08/15/2021";
+        //  pay rate adjustment
+        let payRateEricsen = 25.89032;
+        let fixedRateEricsen = payRateEricsen.toFixed(1);
+        document.getElementById("txtPayRateEricsen").innerHTML =
+          fixedRateEricsen;
+      </script>
+    </main>
+  </body>
+</html>
