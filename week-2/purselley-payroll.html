@@ -21,6 +21,7 @@ https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
   <body>
     <main id="container">
       <h1 id="payroll-header">Payroll System</h1>
+
       <!-- Record 1 -->
       <h3 id="txtRecordMadison">Employee record 1</h3>
       <ul>
@@ -30,6 +31,7 @@ https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
         <li id="txtHireDateMadison"></li>
         <li id="txtPayRateMadison"></li>
       </ul>
+
       <!-- Record 2 -->
       <h3 id="txtRecordZane">Employee record 2</h3>
       <ul>
@@ -39,6 +41,7 @@ https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
         <li id="txtHireDateZane"></li>
         <li id="txtPayRateZane"></li>
       </ul>
+
       <!-- Record 3 -->
       <h3 id="txtRecordEricsen">Employee record 3</h3>
       <ul>
@@ -51,45 +54,68 @@ https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
 
       <script>
         //   ul variable designation
-        let txtRecordMadison = document.getElementById("txtRecordMadison");
-        let txtRecordZane = document.getElementById("txtRecordZane");
-        let txtRecordEricsen = document.getElementById("txtRecordEricsen");
+        let recordOne = document.getElementById("txtRecordMadison");
+        let recordTwo = document.getElementById("txtRecordZane");
+        let recordThree = document.getElementById("txtRecordEricsen");
 
-        //  li variable designation (madison)
-        document.getElementById("txtFirstNameMadison").innerHTML = "Madison";
-        document.getElementById("txtLastNamePurselley").innerHTML = "Purselley";
-        document.getElementById("txtAddressMadison").innerHTML =
-          "Kadena AB, Japan";
-        document.getElementById("txtHireDateMadison").innerHTML = "01/18/2022";
-        //  pay rate adjustments
+        //  first name variables
+        let firstNameEmployeeOne = "Madison";
+        let firstNameEmployeeTwo = "Zane";
+        let firstNameEmployeeThree = "Ericsen";
+
+        // last name variables
+        let lastNameEmployeeOne = "Purselley";
+        let lastNameEmployeeTwo = "Arambula";
+        let lastNameEmployeeThree = "Gudjohnsen";
+
+        // address variables
+        let addressEmployeeOne = "Kadena AB, JAPAN";
+        let addressEmployeeTwo = "Houston, TEXAS";
+        let addressEmployeeThree = "McKinney, TEXAS";
+
+        // hire date variable
+        let currentDate = new Date().toLocaleDateString();
+
+        // pay rate variables
         let payRateMadison = 15.578172;
-        let fixedRateMadison = payRateMadison.toFixed(1);
+        let payRateZane = 20.478172;
+        let payRateEricsen = 25.328172;
+
+        // madison list items
+        document.getElementById("txtFirstNameMadison").innerHTML =
+          firstNameEmployeeOne;
+        document.getElementById("txtLastNamePurselley").innerHTML =
+          lastNameEmployeeOne;
+        document.getElementById("txtAddressMadison").innerHTML =
+          addressEmployeeOne;
+        document.getElementById("txtHireDateMadison").innerHTML = currentDate;
         document.getElementById("txtPayRateMadison").innerHTML =
-          fixedRateMadison;
+          payRateMadison.toFixed(1);
 
-        //  li variable designation (zane)
-        document.getElementById("txtFirstNameZane").innerHTML = "Zane";
-        document.getElementById("txtLastNameArambula").innerHTML = "Arambula";
-        document.getElementById("txtAddressZane").innerHTML = "Houston, TX";
-        document.getElementById("txtHireDateZane").innerHTML = "10/20/2018";
-        //  pay rate adjustment
-        let payRateZane = 20.278172;
-        let fixedRateZane = payRateZane.toFixed(1);
-        document.getElementById("txtPayRateZane").innerHTML = fixedRateZane;
+        // zane list items
+        document.getElementById("txtFirstNameZane").innerHTML =
+          firstNameEmployeeTwo;
+        document.getElementById("txtLastNameArambula").innerHTML =
+          lastNameEmployeeTwo;
+        document.getElementById("txtAddressZane").innerHTML =
+          addressEmployeeTwo;
+        document.getElementById("txtHireDateZane").innerHTML = currentDate;
+        document.getElementById("txtPayRateZane").innerHTML =
+          payRateZane.toFixed(1);
 
-        //  li variable designation (ericsen)
-        document.getElementById("txtFirstNameEricsen").innerHTML = "Ericsen";
+        // ericsen list items
+        document.getElementById("txtFirstNameEricsen").innerHTML =
+          firstNameEmployeeThree;
         document.getElementById("txtLastNameGudjohnsen").innerHTML =
-          "Gudjohnsen";
-        document.getElementById("txtAddressEricsen").innerHTML = "McKinney, TX";
-        let txtHireDateEricsen = new Date();
-        // document.getElementById("txtHireDateEricsen").innerHTML = "08/15/2021";
-        //  pay rate adjustment
-        let payRateEricsen = 25.89032;
-        let fixedRateEricsen = payRateEricsen.toFixed(1);
+          lastNameEmployeeThree;
+        document.getElementById("txtAddressEricsen").innerHTML =
+          addressEmployeeThree;
+        document.getElementById("txtHireDateEricsen").innerHTML = currentDate;
         document.getElementById("txtPayRateEricsen").innerHTML =
-          fixedRateEricsen;
+          payRateEricsen.toFixed(1);
       </script>
+
+      <a href="../index.html" class="return-home">Return</a>
     </main>
   </body>
 </html>
