@@ -39,14 +39,6 @@
   color: black;
 }
 
-.input {
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 .btn-primary {
   background-color: #4f3674;
   color: white;
@@ -55,6 +47,15 @@
 .btn-primary:hover {
   background-color: #d6a800;
   color: #4f3674;
+}
+
+.input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .full-width {
