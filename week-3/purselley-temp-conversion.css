@@ -1,0 +1,25 @@
+body {
+  font-family: Oswald, Verdana, Arial, san-serif;
+}
+
+/* Container size adjustment*/
+#container {
+  width: 650px;
+  margin: auto;
+}
+
+/* page title styling */
+h1 {
+  text-align: center;
+}
+
+/* styling for the conversion button */
+.btn {
+  border-radius: 5px;
+  width: 100%;
+}
+
+#conversionResults {
+  text-align: center;
+  font-size: 28px;
+}
