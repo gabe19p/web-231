@@ -1,0 +1,121 @@
+<!-- 
+https://www.w3schools.com/jsref/jsref_tofixed.asp 
+https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../site.css" />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link rel="stylesheet" type="text/css" href="purselley-payroll.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+    />
+    <title>WEB 231 - Enterprise JavaScript I</title>
+  </head>
+  <body>
+    <main id="container">
+      <h1 id="payroll-header">Payroll System</h1>
+
+      <!-- Record 1 -->
+      <h3 id="txtRecordMadison">Employee record 1</h3>
+      <ul>
+        <li id="txtFirstNameMadison"></li>
+        <li id="txtLastNamePurselley"></li>
+        <li id="txtAddressMadison"></li>
+        <li id="txtHireDateMadison"></li>
+        <li id="txtPayRateMadison"></li>
+      </ul>
+
+      <!-- Record 2 -->
+      <h3 id="txtRecordZane">Employee record 2</h3>
+      <ul>
+        <li id="txtFirstNameZane"></li>
+        <li id="txtLastNameArambula"></li>
+        <li id="txtAddressZane"></li>
+        <li id="txtHireDateZane"></li>
+        <li id="txtPayRateZane"></li>
+      </ul>
+
+      <!-- Record 3 -->
+      <h3 id="txtRecordEricsen">Employee record 3</h3>
+      <ul>
+        <li id="txtFirstNameEricsen"></li>
+        <li id="txtLastNameGudjohnsen"></li>
+        <li id="txtAddressEricsen"></li>
+        <li id="txtHireDateEricsen"></li>
+        <li id="txtPayRateEricsen"></li>
+      </ul>
+
+      <script>
+        //   ul variable designation
+        let recordOne = document.getElementById("txtRecordMadison");
+        let recordTwo = document.getElementById("txtRecordZane");
+        let recordThree = document.getElementById("txtRecordEricsen");
+
+        //  first name variables
+        let firstNameEmployeeOne = "Madison";
+        let firstNameEmployeeTwo = "Zane";
+        let firstNameEmployeeThree = "Ericsen";
+
+        // last name variables
+        let lastNameEmployeeOne = "Purselley";
+        let lastNameEmployeeTwo = "Arambula";
+        let lastNameEmployeeThree = "Gudjohnsen";
+
+        // address variables
+        let addressEmployeeOne = "Kadena AB, JAPAN";
+        let addressEmployeeTwo = "Houston, TEXAS";
+        let addressEmployeeThree = "McKinney, TEXAS";
+
+        // hire date variable
+        let currentDate = new Date().toLocaleDateString();
+
+        // pay rate variables
+        let payRateMadison = 15.578172;
+        let payRateZane = 20.478172;
+        let payRateEricsen = 25.328172;
+
+        // madison list items
+        document.getElementById("txtFirstNameMadison").innerHTML =
+          firstNameEmployeeOne;
+        document.getElementById("txtLastNamePurselley").innerHTML =
+          lastNameEmployeeOne;
+        document.getElementById("txtAddressMadison").innerHTML =
+          addressEmployeeOne;
+        document.getElementById("txtHireDateMadison").innerHTML = currentDate;
+        document.getElementById("txtPayRateMadison").innerHTML =
+          payRateMadison.toFixed(1);
+
+        // zane list items
+        document.getElementById("txtFirstNameZane").innerHTML =
+          firstNameEmployeeTwo;
+        document.getElementById("txtLastNameArambula").innerHTML =
+          lastNameEmployeeTwo;
+        document.getElementById("txtAddressZane").innerHTML =
+          addressEmployeeTwo;
+        document.getElementById("txtHireDateZane").innerHTML = currentDate;
+        document.getElementById("txtPayRateZane").innerHTML =
+          payRateZane.toFixed(1);
+
+        // ericsen list items
+        document.getElementById("txtFirstNameEricsen").innerHTML =
+          firstNameEmployeeThree;
+        document.getElementById("txtLastNameGudjohnsen").innerHTML =
+          lastNameEmployeeThree;
+        document.getElementById("txtAddressEricsen").innerHTML =
+          addressEmployeeThree;
+        document.getElementById("txtHireDateEricsen").innerHTML = currentDate;
+        document.getElementById("txtPayRateEricsen").innerHTML =
+          payRateEricsen.toFixed(1);
+      </script>
+
+      <a href="../index.html" class="return-home">Return</a>
+    </main>
+  </body>
+</html>
