@@ -2,24 +2,40 @@ body {
   font-family: Oswald, Verdana, Arial, san-serif;
 }
 
-/* Container size adjustment*/
-#container {
-  width: 650px;
-  margin: auto;
-}
-
 /* page title styling */
 h1 {
   text-align: center;
+  font-weight: normal;
 }
 
-/* styling for the conversion button */
+/* container adjustment*/
+#container {
+  padding: 10px;
+}
+
+/* styling to get the cards to the correct size and position */
+#temperature-input-card {
+  width: 600px;
+  margin: 3% auto 0;
+}
+#form-results {
+  width: 600px;
+  margin: 3% auto 0;
+}
+
+/* adding the border radius to the convert button */
 .btn {
   border-radius: 5px;
-  width: 100%;
 }
 
+/* center the onClick results and proper font size */
 #conversionResults {
   text-align: center;
   font-size: 28px;
+}
+
+/* move the return button to be underneath the conversion results */
+#return-container {
+  width: 600px;
+  margin: 2% auto;
 }

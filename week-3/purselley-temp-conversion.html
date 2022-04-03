@@ -34,54 +34,63 @@
       <!-- Start of the page contents -->
       <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
 
-      <!-- This is the first card that
-        ; will hold the input field for 
-        ; the temperature conversion. -->
-      <div class="card">
-        <div class="card-title">Fahrenheit to Celsius Converter</div>
-
-        <!-- the form like contents where the user will input their temperature in fahrenheit -->
-        <div class="card-content">
+      <!-- This is the first card that will hold the input field for the temperature conversion. -->
+      <div id="temperature-input-card">
+        <div class="card">
+          <div class="card-title">Fahrenheit to Celsius Converter</div>
+          <div class="card-content">
             <div class="form">
-                <div class="form-field">
-                    <label for="txtFahrenheit">Fahrenheit value:</label>
-                    <input type="text" name="txtFahrenheit" id="txtFahrenheit" class="input"/>
-                    <br>
-                    <button class="btn btn-primary" id="myBtn">Convert Temperature</button>
-                </div>
+              <div class="form-field">
+                <label for="txtFahrenheit">Fahrenheit value:</label>
+                <input
+                  type="text"
+                  name="txtFahrenheit"
+                  id="txtFahrenheit"
+                  class="input"
+                />
+              </div>
+              <div class="form-field">
+                <button class="btn btn-primary full-width" id="myBtn">
+                  Convert Temperature
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- This is the second card that will display the temperature conversion -->
-      <div class="card">
-        <div class="card-title">Conversion Results</div>
+      <div id="form-results">
+        <div class="card">
+          <div class="card-title">Conversion Results</div>
 
-        <!-- div that is linked to the JavaScript conversion at the bottom of this code -->
-        <div class="card-content" id="conversionResults"></div>
+          <!-- div that is linked to the JavaScript conversion at the bottom of this code -->
+          <div class="card-content" id="conversionResults"></div>
+        </div>
       </div>
 
-
       <!-- Back to index/main page -->
-      <a href="../index.html" class="return-home">Return</a>
+      <div id="return-container">
+        <a href="../index.html" class="return-home">Return</a>
+      </div>
 
-
-    <!-- JavaScript -->
-    <script>
-
+      <!-- JavaScript -->
+      <script>
         // onclick action to find the user input
-        document.getElementById("myBtn").onclick = function(){
+        document.getElementById("myBtn").onclick = function () {
           let fahrenheit = document.getElementById("txtFahrenheit").value;
 
-          // variable to convert the fahrenheit to celsius  
-          let fahrenheitConverted = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2);
+          // variable to convert the fahrenheit to celsius
+          let fahrenheitConverted = (
+            (parseFloat(fahrenheit) - 32) /
+            1.8
+          ).toFixed(2);
 
           // bind the converted variable to the HTML conversionResults div
-          document.getElementById("conversionResults").innerHTML = fahrenheitConverted;
-        }
-    </script>
-
+          document.getElementById("conversionResults").innerHTML =
+            fahrenheitConverted;
+        };
+      </script>
     </main>
   </body>
 </html>
