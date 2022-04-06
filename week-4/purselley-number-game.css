@@ -1,0 +1,34 @@
+/* Adjustments to the font styles */
+body {
+  font-family: Oswald, Verdana, Arial, san-serif;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+}
+
+#txtResult {
+  font-size: 28px;
+}
+
+/* Adjustments to the card sizes */
+.card {
+  width: 600px;
+  margin: 8% auto 0;
+}
+
+/* button size adjustment */
+#btnSubmit {
+  width: 100%;
+}
+
+/* return anchor tag positioning */
+#container {
+  width: 600px;
+  margin: auto;
+}
+
+#return-container {
+  margin-top: 20px;
+}

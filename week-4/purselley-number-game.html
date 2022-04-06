@@ -1,0 +1,98 @@
+<!-- 
+============================================
+; Title: Assignment 4.2
+; Author: Danial Purselley
+; Date: 06 April 2022
+; Modified By: Danial Purselley
+; Description: This code will execute a random
+; number generator game. The code will allow
+; user input to guess a number.
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 - Enterprise JavaScript</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link rel="stylesheet" type="text/css" href="purselley-number-game.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+    />
+  </head>
+  <body>
+    <main id="container">
+      <!-- Start of the page contents -->
+      <h1 class="app-header">Welcome to the numbers game!</h1>
+
+      <!-- This is the first card that will hold the input field for the user's guess. -->
+      <div class="card">
+        <div class="card-title">Pick a number between 1 and 10</div>
+        <div class="card-content">
+          <div class="form">
+            <div class="form-field">
+              <!-- label and input -->
+              <label for="txtMyNumber">Guess the number:</label>
+              <input
+                type="text"
+                name="txtMyNumber"
+                id="txtMyNumber"
+                class="input"
+              />
+            </div>
+
+            <!-- Button to submit the user's guess. -->
+            <div class="form-field">
+              <button id="btnSubmit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- This is the second card that will display if they user was high, low or correct. -->
+      <div class="card">
+        <div class="card-title">Results</div>
+        <div class="card-content">
+          <div id="txtResult"></div>
+        </div>
+      </div>
+
+      <!-- Anchor tag back to index/main page -->
+      <div id="return-container">
+        <a href="../index.html" class="return-home">Return</a>
+      </div>
+
+      <!-- Start of the JavaScript -->
+      <script>
+        // randomly generated number between 1 and 10
+        const rnd = Math.floor(Math.random() * 10 + 1);
+
+        // on click function to calculate the user's input into a number value
+        // this function also binds the result to the txtResult HTML id above
+        document.getElementById("btnSubmit").onclick = function () {
+          // variable that will be used to calculate the if/else statements
+          let myNumber = document.getElementById("txtMyNumber").value;
+
+          // if the user's number is too high
+          if (myNumber > rnd) {
+            document.getElementById("txtResult").innerHTML =
+              "The number is less than " + myNumber;
+          }
+          // if the user's number is too low
+          else if (myNumber < rnd) {
+            document.getElementById("txtResult").innerHTML =
+              "The number is greater than " + myNumber;
+          }
+          // if user picks the correct number
+          else {
+            document.getElementById("txtResult").innerHTML =
+              "Congratulations! You picked the correct number!";
+          }
+        };
+      </script>
+    </main>
+  </body>
+</html>
