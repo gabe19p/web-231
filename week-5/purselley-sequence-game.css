@@ -1,0 +1,44 @@
+/* 
+============================================
+; Title: Assignment 5.2
+; Author: Danial Purselley
+; Date: 16 April 2022
+; Modified By: Danial Purselley
+; Description: This code will execute a 
+; number sequence game. This is the styling
+; to keep the code uniform with the course.
+;=========================================== 
+*/
+
+body {
+  font-family: Oswald, Verdana, Arial, san-serif;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+}
+
+#container {
+  width: 600px;
+  margin: auto;
+}
+
+.card {
+  width: 600px;
+  margin: 8% auto 0;
+}
+
+#btnDisplaySequence {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#return-container {
+  margin-top: 20px;
+}
+
+#results {
+  font-size: 28px;
+  text-align: center;
+}
