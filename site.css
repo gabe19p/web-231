@@ -1,9 +1,22 @@
+/* 
+============================================
+; Title: Assignment 1.3
+; Author: Danial Purselley
+; Date: 03 April 2022
+; Modified By: Danial Purselley
+; Description: The is the styling sheet
+; for the index landing page for the course.
+; This will also style different assignments
+; throughout the class.
+;=========================================== 
+ */
+
 /* main style */
 body {
   font-family: Oswald, Verdana, Arial, san-serif;
 }
 
-.container {
+#container {
   margin: 50px 100px 0 100px;
 }
 
