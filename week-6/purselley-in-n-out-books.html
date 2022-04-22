@@ -1,0 +1,204 @@
+<!-- 
+============================================
+; Title: Assignment 6.2
+; Author: Danial Purselley
+; Date: 22 April 2022
+; Modified By: Danial Purselley
+; Description: This code uses javascript 
+; objects to assign data to tables. User
+; input will select a table to display
+; and then the page will output an 
+; HTML table filled by JavaScript.
+;=========================================== 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      text="text/css"
+      href="purselley-in-n-out-books.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+    />
+    <title>WEB 231 - Enterprise JavaScript I</title>
+  </head>
+  <body>
+    <main id="container">
+      <!-- page header -->
+      <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+
+      <!-- top card on the page which is always visible -->
+      <div class="card">
+        <div class="card-title">My Favorites</div>
+        <div class="card-content">
+          <div class="form">
+            <div class="form-field">
+              <!-- user will input their selection at this stage -->
+              <label for="favoriteList">Choose a listing:</label>
+              <select
+                name="favoriteList"
+                id="favoriteList"
+                class="drop-down-menu"
+              >
+                <option value="select">--Select--</option>
+                <option value="books">Top 3 Favorite Books</option>
+                <option value="authors">Top 3 Favorite Authors</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <button id="btnDisplayListing" class="btn btn-primary">
+                Display Listing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- anchor tag back to the course landing page -->
+      <div id="return-container">
+        <a href="../index.html" class="return-home">Return</a>
+      </div>
+
+      <!-- favorite books card which will hold a table
+        ; this card should not be visible on page load -->
+      <div class="card" id="favorite-books">
+        <div class="card-title">Top 3 Favorite Books</div>
+        <div class="card-content">
+          <table>
+            <!-- top row of the table -->
+            <tr>
+              <th>ISBN</th>
+              <th>Title</th>
+              <th>Pages</th>
+            </tr>
+            <!-- first book's row -->
+            <tr>
+              <td><div id="book-1-isbn"></div></td>
+              <td><div id="book-1-title"></div></td>
+              <td><div id="book-1-pages"></div></td>
+            </tr>
+            <!-- second book's row -->
+            <tr>
+              <td><div id="book-2-isbn"></div></td>
+              <td><div id="book-2-title"></div></td>
+              <td><div id="book-2-pages"></div></td>
+            </tr>
+            <!-- third book's row -->
+            <tr>
+              <td><div id="book-3-isbn"></div></td>
+              <td><div id="book-3-title"></div></td>
+              <td><div id="book-3-pages"></div></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- favorite author card which will hold a table
+        ; this card should not be visible on page load-->
+      <div class="card" id="favorite-authors">
+        <div class="card-title">Top 3 Favorite Authors</div>
+        <div class="card-content">
+          <table>
+            <!-- top row of table -->
+            <tr>
+              <th>Name</th>
+              <th>Genre</th>
+            </tr>
+            <!-- first author row -->
+            <tr>
+              <td><div id="author-1-name"></div></td>
+              <td><div id="author-1-genre"></div></td>
+            </tr>
+            <!-- second author row -->
+            <tr>
+              <td><div id="author-2-name"></div></td>
+              <td><div id="author-2-genre"></div></td>
+            </tr>
+            <!-- third author row -->
+            <tr>
+              <td><div id="author-3-name"></div></td>
+              <td><div id="author-3-genre"></div></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- beginning script -->
+    <script>
+      //  book object literals
+      let book1 = {
+        isbn: "9780399529207",
+        title: "Lord of the Flies",
+        pages: "224",
+      };
+      let book2 = {
+        isbn: "9780751532715",
+        title: "Rich Dad Poor Dad",
+        pages: "207",
+      };
+      let book3 = {
+        isbn: "9788893819930",
+        title: "Harry Potter and the Goblet of Fire",
+        pages: "636",
+      };
+
+      //  link book 1's obj data to the table data
+      document.getElementById("book-1-isbn").innerText = book1.isbn;
+      document.getElementById("book-1-title").innerText = book1.title;
+      document.getElementById("book-1-pages").innerText = book1.pages;
+      //  link book 2's obj data to the table data
+      document.getElementById("book-2-isbn").innerText = book2.isbn;
+      document.getElementById("book-2-title").innerText = book2.title;
+      document.getElementById("book-2-pages").innerText = book2.pages;
+      //  link book 3's obj data to the table data
+      document.getElementById("book-3-isbn").innerText = book3.isbn;
+      document.getElementById("book-3-title").innerText = book3.title;
+      document.getElementById("book-3-pages").innerText = book3.pages;
+
+      //  author object literals
+      let author1 = { name: "J.K. Rowling", genre: "Fantasy" };
+      let author2 = { name: "Koyoharu Gotouge", genre: "Manga" };
+      let author3 = { name: "C.S. Lewis", genre: "Fantasy" };
+
+      //  link author 1 obj data to the table
+      document.getElementById("author-1-name").innerText = author1.name;
+      document.getElementById("author-1-genre").innerText = author1.genre;
+      //  link author 2 obj data to the table
+      document.getElementById("author-2-name").innerText = author2.name;
+      document.getElementById("author-2-genre").innerText = author2.genre;
+      //  link author 3 obj data to the table
+      document.getElementById("author-3-name").innerText = author3.name;
+      document.getElementById("author-3-genre").innerText = author3.genre;
+
+      //  variables to link books and authors divs
+      let books = document.getElementById("favorite-books");
+      let authors = document.getElementById("favorite-authors");
+      books.style.display = "none";
+      authors.style.display = "none";
+
+      //  onclick function to return the user's selection
+      document.getElementById("btnDisplayListing").onclick = function () {
+        let choice = document.getElementById("favoriteList").value;
+        if (choice === "books") {
+          authors.style.display = "none";
+          books.style.display = "block";
+        } else if (choice === "authors") {
+          books.style.display = "none";
+          authors.style.display = "block";
+        } else {
+          books.style.display = "none";
+          authors.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
