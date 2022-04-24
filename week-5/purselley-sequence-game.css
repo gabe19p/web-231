@@ -10,34 +10,41 @@
 ;=========================================== 
 */
 
+/* font-family adjustment */
 body {
   font-family: Oswald, Verdana, Arial, san-serif;
 }
 
+/* page header styling */
 h1 {
   font-weight: 400;
   text-align: center;
 }
 
+/* adjust the application size in the browser */
 #container {
   width: 600px;
   margin: auto;
 }
 
+/* adjust the specific card sizes */
 .card {
   width: 600px;
   margin: 8% auto 0;
 }
 
+/* button styles */
 #btnDisplaySequence {
   width: 100%;
   border-radius: 5px;
 }
 
+/* return anchor tag spacing */
 #return-container {
   margin-top: 20px;
 }
 
+/* text size of the results */
 #results {
   font-size: 28px;
   text-align: center;
