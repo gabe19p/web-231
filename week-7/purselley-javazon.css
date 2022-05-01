@@ -1,0 +1,75 @@
+/* 
+============================================
+; Title: Assignment 7.2
+; Author: Danial Purselley
+; Date: 1 May 2022
+; Modified By: Danial Purselley
+; Description: This is the css styling
+; for the javazon assignment
+;=========================================== 
+*/
+
+/* setting the font family */
+body {
+  font-family: Oswald, Verdana, Arial, san-serif;
+}
+
+/* fixes the page header font */
+h1 {
+  font-weight: 400;
+  text-align: center;
+}
+
+/* set container size and position */
+#container {
+  width: 600px;
+  margin: auto;
+}
+
+/* card styles */
+.card {
+  width: 600px;
+  margin: 8% auto 0;
+}
+
+/* inner spacing for the cards with the tables */
+.listing {
+  padding: 0 20px 30px;
+}
+
+/* adjusting the button width */
+#btnDisplayListing {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* spacing the return anchor tag */
+#return-container {
+  margin-top: 20px;
+}
+
+/* table styling corrections */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+
+/* table cells sizing and color corrections*/
+th {
+  text-align: left;
+  background-color: #4f3674;
+  color: white;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:hover {
+  background-color: #d6a800;
+  color: #4f3674;
+  cursor: pointer;
+}
