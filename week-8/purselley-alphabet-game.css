@@ -1,0 +1,50 @@
+/* 
+============================================
+; Title: Assignment 8.2
+; Author: Danial Purselley
+; Date: 5 May 2022
+; Modified By: Danial Purselley
+; Description: This is the css styling
+; for the alphabet game assignment
+;=========================================== 
+*/
+
+/* setting the font family */
+body {
+  font-family: Oswald, Verdana, Arial, san-serif;
+}
+
+/* fixes the page header font */
+h1 {
+  font-weight: 400;
+  text-align: center;
+}
+
+/* set container size and position */
+#container {
+  width: 600px;
+  margin: auto;
+}
+
+/* card styles */
+.card {
+  width: 600px;
+  margin: 8% auto 0;
+}
+
+/* adjusting the button width */
+#btnFindLetter {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* spacing the return anchor tag */
+#return-container {
+  margin-top: 20px;
+}
+
+#alphabet {
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+}
