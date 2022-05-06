@@ -4,7 +4,11 @@
 ; Author: Danial Purselley
 ; Date: 5 May 2022
 ; Modified By: Danial Purselley
-; Description: This code will 
+; Description: This code will demonstrate
+; the use of arrays and for loops. It 
+; will allow a user to select a number
+; and output what letter of the alphabet
+; that is at that number.
 ;=========================================== 
 -->
 
@@ -16,13 +20,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../global.css" />
     <link rel="stylesheet" href="purselley-alphabet-game.css" type="text/css" />
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
     />
     <title>WEB 231 - Enterprise Javascript I</title>
   </head>
+
   <body>
     <main id="container">
       <!-- page header -->
@@ -34,12 +38,13 @@
         <div class="card-content">
           <div class="form">
             <div class="form-field">
+              <!-- user input area -->
               <label for="">Alphabet Letter Position</label>
               <input
                 type="text"
                 name="txtPosition"
                 id="txtPosition"
-                class="txtPosition"
+                class="txtPosition input"
               />
             </div>
             <div class="form-field">
@@ -70,63 +75,44 @@
       <div class="card">
         <div class="card-title">Results</div>
         <div class="card-content">
-          <div class="form">
-            <div id="results"></div>
-          </div>
+          <div id="alphabet-letter"></div>
         </div>
       </div>
     </main>
 
     <!-- start of javascript -->
     <script>
-      //  alphabet array set to const since it will not change
-      const alphabet = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z",
-      ];
+      //  alphabet array using spread syntax
+      const alphabet = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 
-      //  letter output string
+      //  string to display the full alphabet
       let alphabetOutput = "";
 
-      //  for/in loop to display letter list
-      for (let letter in alphabet) {
-        alphabetOutput += alphabet[letter] + ", ";
+      //  for/in loop to display alphabet list
+      for (let value in alphabet) {
+        alphabetOutput += alphabet[value] + ", ";
       }
 
-      //  assign letters output to alphabet div
+      //  assign alphabetOutput to alphabet div
       document.getElementById("alphabet").innerHTML = alphabetOutput.slice(
         0,
         -2
       );
 
-      // find letter on click
+      //  onclick function to find users letter
       document.getElementById("btnFindLetter").onclick = function () {
         let pos = document.getElementById("txtPosition").value;
-        console.log(pos);
+        //  linking each letter to the set position
+        let letter = alphabet[pos - 1];
+
+        //  bind output to html depending on the user input
+        if (letter == undefined) {
+          document.getElementById("alphabet-letter").innerHTML =
+            "There are not " + pos + " letters in the alphabet.";
+        } else {
+          document.getElementById("alphabet-letter").innerHTML =
+            letter + " is at position " + pos + " in the alphabet.";
+        }
       };
     </script>
   </body>

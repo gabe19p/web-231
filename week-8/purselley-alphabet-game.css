@@ -24,6 +24,7 @@ h1 {
 #container {
   width: 600px;
   margin: auto;
+  padding-bottom: 50px;
 }
 
 /* card styles */
@@ -43,8 +44,9 @@ h1 {
   margin-top: 20px;
 }
 
-#alphabet {
+/* center and enlarger card 2 & 3 text */
+#alphabet,
+#alphabet-letter {
   font-size: 28px;
-  text-transform: uppercase;
   text-align: center;
 }
