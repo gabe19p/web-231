@@ -1,0 +1,46 @@
+/* setting the font family */
+body {
+  font-family: Oswald, Verdana, Arial, san-serif;
+}
+
+/* fixes the page header font */
+h1 {
+  font-weight: 500;
+  text-align: center;
+}
+
+/* set container size and position */
+#container {
+  width: 600px;
+  margin: auto;
+}
+
+/* card styles */
+.card {
+  width: 600px;
+  margin: 8% auto 0;
+}
+
+/* center player cards text in the middle */
+.player-card {
+  text-align: center;
+}
+
+/* adjusting the button width */
+#btnDealCards {
+  width: 100%;
+}
+
+/* spacing the return anchor tag */
+#return-container {
+  margin-top: 20px;
+}
+
+/* grid styles */
+#player-card-container {
+  display: grid;
+  grid-template-rows: 13;
+  grid-template-columns: 4;
+  gap: 10px;
+  padding: 10px;
+}
