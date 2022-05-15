@@ -1,3 +1,14 @@
+/* 
+============================================
+; Title: Assignment 9.2
+; Author: Danial Purselley
+; Date: 15 May 2022
+; Modified By: Danial Purselley
+; Description: This is the css styling
+; for the final card game project.
+;=========================================== 
+*/
+
 /* setting the font family */
 body {
   font-family: Oswald, Verdana, Arial, san-serif;
@@ -40,7 +51,13 @@ h1 {
 #player-card-container {
   display: grid;
   grid-template-rows: 13;
-  grid-template-columns: 4;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
+}
+
+/* adjust the size of the cards 
+to not overlap the container */
+.player-card {
+  width: 100%;
 }

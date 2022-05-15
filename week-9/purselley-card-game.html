@@ -4,8 +4,13 @@
 ; Author: Danial Purselley
 ; Date: 11 May 2022
 ; Modified By: Danial Purselley
-; Description: This code will 
-;=========================================== 
+; Description: This code will display
+; a deck of cards with a new shuffle 
+; each time. 
+;
+; Sources used for completion were:
+; Web Dev Simplified (YouTube)
+;===========================================
 -->
 
 <!DOCTYPE html>
@@ -21,16 +26,16 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
     />
     <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@5.4.55/css/materialdesignicons.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@mdi/font@5.4.55/css/materialdesignicons.css"
     />
+
     <title>WEB 231 - Enterprise Javascript I</title>
   </head>
   <body>
     <main id="container">
       <!-- app header -->
       <h1 class="app-header">Welcome to the Card Game!</h1>
-
       <!-- card dealer div -->
       <div class="card">
         <div class="card-title">Card Dealer</div>
@@ -39,7 +44,8 @@
         </div>
       </div>
 
-      <!-- anchor tag back to the course landing page -->
+      <!-- anchor tag back to 
+        ;the course landing page -->
       <div id="return-container">
         <a href="../index.html" class="return-home">Return</a>
       </div>
@@ -47,10 +53,8 @@
       <!-- shuffled cards div -->
       <div class="card">
         <div class="card-title">Shuffled Cards</div>
-        <div class="card-content">
-          <!-- this div is linked to the JS output -->
-          <div id="player-card-container"></div>
-        </div>
+        <!-- this div is linked to the JS output -->
+        <div id="player-card-container"></div>
       </div>
     </main>
   </body>
@@ -58,7 +62,7 @@
   <!-- start of javascript -->
   <script>
     //  global variable for suites
-    const SUITS = ["♠", "♣", "♥", "♦"];
+    const SUITS = ["Spades", "Clubs", "Hearts", "Diamonds"];
     //  global variable for faces
     const FACES = [
       "A",
@@ -79,6 +83,24 @@
     const CARD_COUNT = 52;
     //   class for the entire deck from the dealer
     class Dealer {
+      SUITS = ["Spades", "Clubs", "Hearts", "Diamonds"];
+      FACES = [
+        "A",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "J",
+        "Q",
+        "K",
+      ];
+      CARD_COUNT = 52;
+
       constructor(cards = getDeckOfCards()) {
         this.cards = cards;
       } //  end of constructor
@@ -114,175 +136,67 @@
     //  linking the card container to a variable
     const cardContainer = document.getElementById("player-card-container");
 
+    //  building each card
+    function buildPlayingCard(card, suitIcon, faceColor, suitColor) {
+      return `
+        <div class="card player-card">
+          <div class="card-title" style="text-align:left; font-size:20px;padding-left:10px;color:${faceColor}">${card.face}
+          </div>
+          <div class="player-card-content" style="font-size:28px; padding-bottom:25px;">
+              <span class="${suitIcon}" style="color:${suitColor}"></span>
+          </div>
+          </div>`;
+    } //  end card building function
+
     //  onclick selection
     document.getElementById("btnDealCards").onclick = function () {
+      //  create new dealer
       let dealer = new Dealer();
       dealer.shuffle();
-      console.log(dealer);
-      //  test console to ensure results
-      console.log("working");
-      buildPlayingCard(dealer[0]);
+      let cardOutputWithIcon = "";
+
+      //  loop the cards
+      for (card of dealer.cards) {
+        //  start of switch statement
+        switch (card.suit) {
+          case "Hearts":
+            cardOutputWithIcon += buildPlayingCard(
+              card,
+              "mdi mdi-heart",
+              "red",
+              "red"
+            );
+            break;
+          case "Diamonds":
+            cardOutputWithIcon += buildPlayingCard(
+              card,
+              "mdi mdi-cards-diamond",
+              "red",
+              "red"
+            );
+            break;
+          case "Spades":
+            cardOutputWithIcon += buildPlayingCard(
+              card,
+              "mdi mdi-cards-spade",
+              "black",
+              "black"
+            );
+            break;
+          case "Clubs":
+            cardOutputWithIcon += buildPlayingCard(
+              card,
+              "mdi mdi-cards-club",
+              "black",
+              "black"
+            );
+            break;
+          default:
+            console.log("default switched");
+        }
+      }
+      document.getElementById("player-card-container").innerHTML =
+        cardOutputWithIcon;
     };
-
-    function buildPlayingCard(card, suitIcon, faceColor, suitColor) {
-      //  cardDiv manipulation
-      const cardDiv = document.createElement("div");
-      cardDiv.classList.add("card", "player-card");
-
-      //  cardTitleDiv manipulation
-      const cardTitleDiv = document.createElement("div");
-      cardTitleDiv.classList.add("card-title");
-      cardTitleDiv.style.color = "${faceColor}";
-      cardTitleDiv.style.textAlign = "left";
-      cardTitleDiv.style.fontSize = "20px";
-      cardTitleDiv.style.paddingLeft = "10px";
-      //  cardContentDiv manipulation
-      const cardContentDiv = document.createElement("div");
-      cardContentDiv.classList.add("card-content");
-      cardContentDiv.style.fontSize = "28px";
-      cardContentDiv.style.paddingBottom = "25px";
-      //  span manipulation
-      const spanDiv = document.createElement("span");
-      spanDiv.classList.add("${suitIcon}");
-      spanDiv.style.color = "${suitColor}";
-
-      //  append to page
-      cardContainer.appendChild(cardDiv);
-      cardDiv.appendChild(cardTitleDiv);
-      cardTitleDiv.appendChild(cardContentDiv);
-      cardContentDiv.appendChild(spanDiv);
-    }
-
-    // {
-    //   class Card {
-    //     constructor(face, suit) {
-    //       this.face = face;
-    //       this.suit = suit;
-    //     }
-    //   }
-
-    //   class Dealer {
-    //     constructor(getDeckOfCards) {
-    //       //  amount of cards
-    //       const CARD_COUNT = 52;
-
-    //       //  empty card deck
-    //       let cards = [];
-
-    //       //  card position array
-    //       let faces = [
-    // "A",
-    // "2",
-    // "3",
-    // "4",
-    // "5",
-    // "6",
-    // "7",
-    // "8",
-    // "9",
-    // "10",
-    // "J",
-    // "Q",
-    // "K",
-    //       ];
-
-    //       //  faces array
-    //       let suits = ["Hearts", "Clubs", "Diamonds", "Spades"];
-    //     }
-    //   }
-
-    //   //  deck of cards function
-    //   function getDeckOfCards() {
-    //     for (let count = 0; count < this.CARD_COUNT; count++) {
-    //       this.cards[count] = new Card(
-    //         this.faces[count % 13],
-    //         this.suits[Math.floor(count / 13)]
-    //       );
-    //     }
-    //   }
-
-    //   //  shuffle function
-    //   function shuffle() {
-    // for (firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
-    //   let secondCard = Math.floor(Math.random() * this.CARD_COUNT);
-    //   let tempCard = this.cards[firstCard];
-    //   this.cards[firstCard] = this.cards[secondCard];
-    //   this.cards[secondCard] = tempCard;
-    // }
-    //   }
-
-    //   //  building the player card function
-    // function buildPlayingCard(card, suitIcon, faceColor, suitColor) {
-    //   return `<div class="card player-card">
-    //     <div
-    //       class="card-title"
-    //       style="text-align:left;font-size:20px;padding-left:10px;color:${faceColor}"
-    //     >
-    //       <div
-    //         class="card-content"
-    //         style="font-size:28px;padding-bottom:25px"
-    //       >
-    //         <span class="${suitIcon}" style="color:${suitColor}">
-    //           ${card.face}
-    //         </span>
-    //       </div>
-    //     </div>
-    //   </div>`;
-    // }
-
-    //   //  onclick function to display the deck of cards
-    //   document.getElementById("btnDealCards").onclick = function () {
-    //     new Dealer();
-
-    //     shuffle();
-
-    //     function myFunction() {
-    //       let cardOutputWithIcon = "";
-
-    //       //  for loop through each card suit
-    //       for (const card of cards) {
-    //         switch (card.suits) {
-    //           case "Hearts":
-    //             cardOutputWithIcon += buildPlayingCard(
-    //               card,
-    //               "mdi mdi-heart",
-    //               "red",
-    //               "red"
-    //             );
-    //             break;
-    //           case "Diamonds":
-    //             cardOutputWithIcon += buildPlayingCard(
-    //               card,
-    //               "mdi mdi-cards-diamonds",
-    //               "red",
-    //               "red"
-    //             );
-    //             break;
-    //           case "Clubs":
-    //             cardOutputWithIcon += buildPlayingCard(
-    //               card,
-    //               "mdi mdi-cards-clubs",
-    //               "black",
-    //               "black"
-    //             );
-    //             break;
-    //           case "Spades":
-    //             cardOutputWithIcon += buildPlayingCard(
-    //               card,
-    //               "mdi mdi-cards-spade",
-    //               "black",
-    //               "black"
-    //             );
-    //             break;
-    //           default:
-    //             break;
-    //         }
-    //       } //  end of for loop
-
-    //       document.getElementById("player-card-container").innerHTML =
-    //         cardOutputWithIcon;
-    //     }
-    //   };
-    // }
   </script>
 </html>
